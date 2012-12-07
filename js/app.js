@@ -1,7 +1,7 @@
 var App = Ember.Application.create();
 
-var RADIUS = 250,
-    CENTER = 300
+var RADIUS = 200,
+    CENTER = 250
 var paper = Raphael("raphael-canvas", CENTER*2, CENTER*2);
 
 App.sun = Ember.Object.create({
@@ -22,11 +22,11 @@ App.earth = Ember.Object.create({
   circle: null,
 
   x: function(){
-    return this.get('sunX') + RADIUS * Math.cos(this.get('rot'));
+    return Math.floor(this.get('sunX') + RADIUS * Math.cos(this.get('rot')));
   }.property('sunX', 'rot'),
 
   y: function(){
-    return this.get('sunY') + RADIUS * Math.sin(this.get('rot'));
+    return Math.floor(this.get('sunY') + RADIUS * Math.sin(this.get('rot')));
   }.property('sunY', 'rot'),
 
   onMove: function(){
@@ -50,11 +50,11 @@ App.moon = Ember.Object.create({
   circle: null,
 
   x: function(){
-    return this.get('earthX') + 10 * Math.cos(this.get('rot'));
+    return Math.floor(this.get('earthX') + 10 * Math.cos(this.get('rot')));
   }.property('earthX', 'rot'),
 
   y: function(){
-    return this.get('earthY') + 10 * Math.sin(this.get('rot'));
+    return Math.floor(this.get('earthY') + 10 * Math.sin(this.get('rot')));
   }.property('earthY', 'rot'),
 
   onMove: function(){

@@ -20,13 +20,18 @@
   <![endif]-->
 </head>
 <body>
-  <script type="text/x-handlebars" data-template-name="application">
-    <h1>Ember moon demo
-    <a href='https://github.com/yhara/ember_moon'>github</a>
-    </h1>
-  </script>
-
+  <h1>Ember moon demo
+    <a href='https://github.com/yhara/ember_moon'>(github)</a>
+  </h1>
   <div id="raphael-canvas"></div>
+
+  <script type="text/x-handlebars" data-template-name="application">
+    <ul>
+      <li>Sun: ({{App.sun.x}}, {{App.sun.y}})</li>
+      <li>Earth: ({{App.earth.x}}, {{App.earth.y}})</li>
+      <li>Moon: ({{App.moon.x}}, {{App.moon.y}})</li>
+    </ul>
+  </script>
 
   <!-- The missing protocol means that it will match the current protocol, either http or https. If running locally, we use the local jQuery. -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
