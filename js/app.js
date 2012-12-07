@@ -2,7 +2,7 @@ var App = Ember.Application.create();
 
 var RADIUS = 250,
     CENTER = 300
-var paper = Raphael(10, 10, CENTER*2, CENTER*2);
+var paper = Raphael("raphael-canvas", CENTER*2, CENTER*2);
 
 App.sun = Ember.Object.create({
   x: CENTER,
